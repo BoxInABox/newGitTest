@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8; text/html" http-equiv="Content-Type">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--<meta name="viewport" content="width=device-width, user-scalable=no" /> // what is this line good for exactly? -->
+		<title>ARTMATCH - GIT Newsletter</title>
+		<style type="text/css">
+		.container {
+		width: 100%;
+		max-width: 600px;
+		/*height: 0px;*/
+		margin: 0px auto;
+		position: relative;
+		box-shadow: 0 0 10px #000;
+		}
+		.one > div {
+		/*height: 50px;*/
+		min-height:50px;
+		box-sizing: border-box;
+		
+		}
+		.main {
+		background: #f26422;
+		position: relative;
+		display: block;
+		width: 106%;
+		left: -3%;
+		top: 0;
+		padding: 5px;
+		/*margin-left: -45%;*/
+		z-index: 10;
+		
+		}
+		.main > div {
+		border: 1px dashed #fff;
+		border-color: rgba(255, 255, 255, 0.5);
+		/*height: 40px;*/
+		min-height: 40px;
+		box-sizing: border-box;
+		/**/position: relative;
+		}
+		.bk {
+		background:#f26422;
+		position: absolute;
+		width: 8%;
+		top: -20px;
+		}
+		.bk.l {
+		left: -48px;
+		/*display: none;*/
+		}
+		.bk.r {
+		right: -48px;
+		/*display: none;*/
+		}
+		.skew {
+		position: absolute;
+		background: #f8a982;
+		width: 3%;
+		top: -4px;
+		z-index: 5;
+		}
+		.skew.l {
+		left: -3%;
+		transform: skew(00deg,-20deg);
+		height: 100%;
+		}
+		.skew.r {
+		right: -3%;
+		transform: skew(00deg,20deg);
+		height: 100%;
+		}
+		.bk.l > div {
+		left: -30px;
+		box-sizing: border-box;
+		}
+		.bk.r > div {
+		right: -30px;
+		box-sizing: border-box;
+		}
+		.arrow {
+		height: 25px !important;
+		position: absolute;
+		z-index: 2;
+		width: 0;
+		height: 0;
+		}
+		.arrow.top {
+		top: 0px;
+		border-top: 0px solid transparent;
+			border-bottom: 25px solid transparent;
+		border-right: 30px solid #f26422;
+		}
+		.arrow.bottom {
+		top: 25px;
+		border-top: 25px solid transparent;
+			border-bottom:0px solid transparent;
+		border-right: 30px solid #f26422;
+		}
+		.r .bottom {
+		border-top: 25px solid transparent;
+			border-bottom: 0px solid transparent;
+		border-left: 30px solid #f26422;
+		border-right: none;
+		}
+		.r .top {
+		border-bottom: 25px solid transparent;
+			border-top: 0px solid transparent;
+		border-left: 30px solid #f26422;
+		border-right: none;
+		}
+		@media all and (max-width: 1020px) {
+		.skew.l {
+		left: 5%;
+		transform: skew(00deg,25deg);
+		}
+		.skew.r {
+		right: 5%;
+		transform: skew(00deg,-25deg);
+		}
+		}
+		@media all and (max-width: 680px) {
+		.skew.l {
+		left: 5%;
+		transform: skew(00deg,30deg);
+		}
+		.skew.r {
+		right: 5%;
+		transform: skew(00deg,-30deg);
+		}
+		}
+		@media all and (max-width: 460px) {
+		.skew.l {
+		left: 5%;
+		transform: skew(00deg,40deg);
+		}
+		.skew.r {
+		right: 5%;
+		transform: skew(00deg,-40deg);
+		}
+		}
+		/*body {
+			margin: 0;
+			padding: 0;
+			background-image: url(http://35.156.103.60:81/mail/fleece/img/bg.jpg);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			background-color: #464646;
+		}*/
+		/****************************************/
+		.bt_wrap{
+		display:inline-block;
+		width:auto;
+		height:auto;
+		background:#16161a;
+		width:100px;
+		height:100px;
+		cursor:pointer;
+		perspective: 200px;
+		transition:background 0.2s ease-out;
+		}
+		.box{
+		position:absolute;
+		perspective-origin: 50px 50px;
+		transform-origin: 50px 50px;
+		transition:transform 0.2s ease-out;
+		transform-style: preserve-3d;
+		}
+		.icon,.icon2{
+		position:absolute;
+		top:0;
+		left:20px;
+		margin-top:20px;
+		background:#16161a;
+		color:#ffffff;
+		width:60px;
+		height:60px;
+		font-size:2em;
+		line-height:60px;
+		transition:background 0.2s ease-out;
+		transform: translate3d(0px,0px,30px) rotateY(0deg);
+		}
+		.icon2{
+		background:#464646;
+		transform: translate3d(29px,0px,0px) rotateY(90deg);
+		transition:background 0.2s ease-out;
+		}
+		.bt_wrap:hover{
+		background:#118bdc;
+		}
+		.bt_wrap:hover .icon{
+		background:#464646;
+		}
+		.bt_wrap:hover .icon2{
+		background:#16161a;
+		}
+		.bt_wrap:hover .box{
+		transform: rotateY(-90deg);
+		}
+		/********************************/
+		body,#bodyTable,#bodyCell{
+					height:100% !important;
+					margin:0;
+					padding:0;
+					width:100% !important;
+				}
+				table{
+					border-collapse:collapse;
+				}
+				img,a img{
+					border:0;
+					outline:none;
+					text-decoration:none;
+				}
+				h1,h2,h3,h4,h5,h6{
+					margin:0;
+					padding:0;
+				}
+				p{
+					margin:1em 0;
+					padding:0;
+				}
+				a{
+					word-wrap:break-word;
+				}
+				.ReadMsgBody{
+					width:100%;
+				}
+				.ExternalClass{
+					width:100%;
+				}
+				.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{
+					line-height:100%;
+				}
+				table,td{
+					mso-table-lspace:0pt;
+					mso-table-rspace:0pt;
+				}
+				#outlook a{
+					padding:0;
+				}
+				img{
+					-ms-interpolation-mode:bicubic;
+				}
+				body,table,td,p,a,li,blockquote{
+					-ms-text-size-adjust:100%;
+					-webkit-text-size-adjust:100%;
+				}
+				#bodyCell{
+					padding:20px;
+				}
+				.themezyImage{
+					vertical-align:bottom;
+				}
+				.themezyTextContent img{
+					height:auto !important;
+				}
+				body,#bodyTable{
+					background-color:rgb(255, 255, 255);
+					
+				}
+		#bodyTable {
+		background-image: url(highlight-bg.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		}
+				#bodyCell{
+					border-top:0;
+				}
+				#templateContainer,
+		#envelopeContainer{
+					border:0;
+				}
+				h1{
+					color:#5d4846 !important;
+					display:block;
+					font-family:Helvetica;
+					font-size:36px;
+					font-style:normal;
+					font-weight:bold;
+					line-height:125%;
+					letter-spacing:-1px;
+					margin:0;
+					text-align:center;
+				}
+				h2{
+					color:#ffffff !important;
+					display:block;
+					font-family:Helvetica;
+					font-size:24px;
+					font-style:normal;
+					font-weight:bold;
+					line-height:125%;
+					letter-spacing:-.75px;
+					margin:0;
+					text-align:center;
+				}
+				h3{
+					color:#606060 !important;
+					display:block;
+					font-family:Helvetica;
+					font-size:18px;
+					font-style:normal;
+					font-weight:bold;
+					line-height:200%;
+					letter-spacing:-.5px;
+					margin:0;
+					text-align:center;
+				}
+				h4{
+					color:#808080 !important;
+					display:block;
+					font-family:Helvetica;
+					font-size:16px;
+					font-style:normal;
+					font-weight:bold;
+					line-height:125%;
+					letter-spacing:normal;
+					margin:0;
+					text-align:center;
+				}
+				#templatePreheader{
+					background-color: rgba(255, 255, 255, 1);
+					border-top:0;
+					border-bottom:0;
+				}
+				.preheaderContainer .themezyTextContent,.preheaderContainer .themezyTextContent p{
+					color:#6e5552;
+					font-family:Helvetica;
+					font-size:11px;
+					line-height:125%;
+					text-align:left;
+				}
+				.preheaderContainer .themezyTextContent a{
+					color:#ad352a;
+					font-weight:normal;
+					text-decoration:underline;
+				}
+				#templateHeader{
+					background-color:rgb(61, 122, 176);
+					border-top:0;
+					border-bottom:0;
+				}
+				.headerContainer .themezyTextContent,.headerContainer .themezyTextContent p{
+					color:#606060;
+					font-family:Helvetica;
+					font-size:15px;
+					line-height:150%;
+					text-align:left;
+				}
+				.headerContainer .themezyTextContent a{
+					color:#6DC6DD;
+					font-weight:normal;
+					text-decoration:underline;
+				}
+				#templateBody{
+					background-color:#faf7f0;
+					border-top:0;
+					border-bottom:0;
+				}
+				.bodyContainer .themezyTextContent,.bodyContainer .themezyTextContent p{
+					color:#948e8c;
+					font-family:Helvetica;
+					font-size:14px;
+					line-height:150%;
+					text-align:left;
+				}
+				.bodyContainer .themezyTextContent a{
+					color:#6DC6DD;
+					font-weight:normal;
+					text-decoration:underline;
+				}
+				#templateColumns{
+					background-color:#faf7f0;
+					border-top:0;
+					border-bottom:0;
+				}
+				.leftColumnContainer .themezyTextContent,.leftColumnContainer .themezyTextContent p{
+					color:#948e8c;
+					font-family:Helvetica;
+					font-size:14px;
+					line-height:150%;
+					text-align:center;
+				}
+				.leftColumnContainer .themezyTextContent a{
+					color:#6DC6DD;
+					font-weight:normal;
+					text-decoration:underline;
+				}
+				.centerColumnContainer .themezyTextContent,.centerColumnContainer .themezyTextContent p{
+					color:#948e8c;
+					font-family:Helvetica;
+					font-size:14px;
+					line-height:150%;
+					text-align:center;
+				}
+				.centerColumnContainer .themezyTextContent a{
+					color:#6DC6DD;
+					font-weight:normal;
+					text-decoration:underline;
+				}
+				.rightColumnContainer .themezyTextContent,.rightColumnContainer .themezyTextContent p{
+					color:#948e8c;
+					font-family:Helvetica;
+					font-size:14px;
+					line-height:150%;
+					text-align:center;
+				}
+				.rightColumnContainer .themezyTextContent a{
+					color:#6DC6DD;
+					font-weight:normal;
+					text-decoration:underline;
+				}
+				#templateFooter{
+					background-color:#ffffff;
+					border-top:0;
+					border-bottom:0;
+				}
+				.footerContainer .themezyTextContent,.footerContainer .themezyTextContent p{
+					color:#6e5552;
+					font-family:Helvetica;
+					font-size:11px;
+					line-height:125%;
+					text-align:center;
+				}
+				.footerContainer .themezyTextContent a{
+					color:#ad352a;
+					font-weight:normal;
+					text-decoration:underline;
+				}
+		
+		</style>
+	</head>
+	<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+		<center>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
+			<tr>
+				<td align="center" valign="top" id="bodyCell">
+					<!-- BEGIN TEMPLATE // -->
+					<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
+						<tr>
+							<td align="center" valign="top">
+								<!-- BEGIN PREHEADER // -->
+								<table border="0" cellpadding="0" cellspacing="0" width="600" id="templatePreheader">
+									<tbody><tr>
+										<td valign="top" class="preheaderContainer" style="padding-top:9px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyTextBlock">
+											<tbody class="themezyTextBlockOuter">
+												<tr>
+													<td valign="top" class="themezyTextBlockInner">
+														
+														
+														
+													</td><td valign="top" class="themezyTextBlockInner" style="width: 100%;">
+													<img src="index5/NewLogo.png" style="max-width: 60%;display: block;margin:auto;">
+												</td>
+												
+												
+												
+											</tr>
+										</tbody>
+									</table>
+									<table class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody class="mcnDividerBlockOuter">
+											<tr>
+												<td class="mcnDividerBlockInner" style="min-width: 100%;padding: 0px 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+													<table class="mcnDividerContent" style="min-width: 100%; border-top: 1px solid rgb(253, 204, 180); /*box-shadow: 0 0 10px #000;*/ border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="100%">
+														<tbody><tr>
+															<td style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																<span></span>
+															</td>
+														</tr>
+													</tbody></table>
+													<!--
+													<td class="mcnDividerBlockInner" style="padding: 18px;">
+																			<hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+														-->
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyDividerBlock">
+											<tbody class="themezyDividerBlockOuter">
+												<tr>
+													<td class="themezyDividerBlockInner" style="padding: 7px 18px;">
+														<table class="themezyDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%">
+															<tbody><tr>
+																<td>
+																	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyTextBlock">
+																		<tbody class="themezyTextBlockOuter">
+																			<tr>
+																				<td valign="top" class="themezyTextBlockInner">
+																					
+																					<table align="left" border="0" cellpadding="0" cellspacing="0" width="366" class="themezyTextContentContainer">
+																						<tbody class="themezyCaptionBlockOuter">
+																							<tr>
+																								
+																								<td align="center" width="7%" class="themezyCaptionBlockInner">
+																									<a href="https://www.facebook.com/pages/Artmatch/176922655674436"><img src="http://artmatch.net/newsletter/standard/surse-img/ico-fb.png" alt="" title="" width="32" height="32" border="0" style="max-width:32px;max-height:32px;background: #f36523;"></a>
+																								</td>
+																								<td width="2%">&nbsp;</td>
+																								<td align="center" width="7%" class="themezyCaptionBlockInner">
+																									<a href="https://plus.google.com/+artmatch">
+																										<img src="http://artmatch.net/newsletter/standard/surse-img/ico-google.png" alt="" title="" width="32" height="32" border="0" style="max-width:32px;max-height:32px;background: #f36523;">
+																									</a>
+																								</td>
+																								<td width="2%">&nbsp;</td>
+																								<td align="center" class="themezyCaptionBlockInner" width="7%">
+																									<a href="https://www.linkedin.com/company-beta/2252429/?pathWildcard=2252429">
+																										<img src="http://artmatch.net/newsletter/standard/surse-img/ico-linkin.png" alt="" title="" width="32" height="32" border="0" style="max-width:32px;max-height:32px;background: #f36523;">
+																									</a>
+																								</td>
+																								<td width="2%">&nbsp;</td>
+																								<td align="center" class="themezyCaptionBlockInner" width="7">
+																									<a href="http://www.artmatch.net/">
+																										<img src="http://artmatch.net/newsletter/standard/surse-img/ico-web.png" alt="" title="" width="32" height="32" border="0" style="max-width:32px;max-height:32px;background: #f36523;">
+																									</a>
+																								</td>
+																								<td align="center" class="themezyCaptionBlockInner"></td>
+																							</tr>
+																						</tbody>
+																					</table>
+																					
+																					<table align="right" border="0" cellpadding="0" cellspacing="0" width="197" class="themezyTextContentContainer">
+																						<tbody><tr>
+																							
+																							<td valign="top" class="themezyTextContent" style="padding-top:9px; padding-right:18px; padding-bottom:20px; padding-left:0;">
+																								
+																								<a href="#" target="_blank">View this email in your browser</a>
+																							</td>
+																						</tr>
+																					</tbody></table>
+																					
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</td>
+															</tr>
+														</tbody></table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody></table>
+							<!-- // END PREHEADER -->
+						</td>
+					</tr>
+					<tr>
+						<td align="center" valign="top">
+							<!-- BEGIN HEADER // -->
+							<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader">
+								<tr>
+									<td valign="top" class="headerContainer">
+										<!--<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyDividerBlock">
+																<tbody class="themezyDividerBlockOuter">
+																						<tr>
+																												<td class="themezyDividerBlockInner" style="padding: 25px 18px;">
+																																		<table class="themezyDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%">
+																																								<tbody><tr>
+																																														<td>
+																																																				<span></span>
+																																														</td>
+																																								</tr>
+																																		</tbody></table>
+																												</td>
+																						</tr>
+																</tbody>
+										</table> -->
+										<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyImageBlock">
+											<tbody class="themezyImageBlockOuter">
+												<tr>
+													<td valign="top"  class="themezyImageBlockInner">
+														<table align="left" width="100%" border="0" cellpadding="0" cellspacing="0" class="themezyImageContentContainer">
+															<tbody><tr>
+																<td class="themezyImageContent" valign="top" style="/* padding-right: 9px; *//* padding-left: 9px; *//* padding-top: 0; *//* padding-bottom: 0; *//* text-align:center; */background-color: #3d7ab1;">
+																	
+																	
+																	<img align="center" alt="" src="index5/U2621 Merchandising Strip with 12 stations incl header White JPG_2.jpg" width="150" style="width: 100%;max-width: 600px;padding-bottom: 0;display: inline !important;vertical-align: bottom;" class="themezyImage">
+																	
+																	
+																</td>
+															</tr>
+														</tbody></table>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+										<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyDividerBlock">
+											<tbody class="themezyDividerBlockOuter">
+												<tr>
+													<td class="themezyDividerBlockInner" >
+														<table class="themezyDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%">
+															<tbody><tr>
+																<td >
+																	<!-- padding-bottom: 20px; -->
+																	<!-- RIBBON 1 -->
+																	<div class="container one">
+																		<div class="bk l">
+																			<div class="arrow top"></div>
+																			<div class="arrow bottom"></div>
+																		</div>
+																		<div class="skew l"></div>
+																		<div class="main">
+																			<div><div style="/* width: 65%; *//* margin-left: 30px; */">
+																				<h2 style="
+																				text-align: center;
+																				margin: 10px auto;
+																				">Produs MPP 206-1182_WHI</h2>
+																			</div>
+																			
+																		</div>
+																	</div>
+																	<div class="skew r"></div>
+																	
+																	<div class="bk r">
+																		<div class="arrow top"></div>
+																		<div class="arrow bottom"></div>
+																	</div>
+																</div>
+															</td>
+														</tr>
+													</tbody></table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyTextBlock">
+										<tbody class="themezyTextBlockOuter">
+											<tr>
+												<td valign="top" class="themezyTextBlockInner">
+													
+													<table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="themezyTextContentContainer">
+														<tbody><tr>
+															
+															<td valign="top" class="themezyTextContent" style="/* padding-top:9px; */padding-right: 18px;/* padding-bottom: 9px; */padding-left: 18px;/* color: white; */">
+																<p style="
+																	color: white;
+																	text-align: center;
+																	">&nbsp; &nbsp; &nbsp;1,2,3 atat de simplu este sa expui produsele pe banda de mercantizare  cu antet  de 70X40 mm  si doua benzi cu cate 6 puncte de fixare, fiecare.<br>
+																</p>
+															</td>
+														</tr>
+													</tbody></table>
+													
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!--<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyDividerBlock">
+																								<tbody class="themezyDividerBlockOuter">
+																														<tr>
+																																				<td class="themezyDividerBlockInner" style="padding: 25px 18px;">
+																																										<table class="themezyDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%">
+																																																<tbody><tr>
+																																																						<td>
+																																																						</td>
+																																																</tr>
+																																										</tbody></table>
+																																				</td>
+																														</tr>
+																								</tbody>
+									</table>-->
+								</td>
+							</tr>
+						</table>
+						<!-- // END HEADER -->
+					</td>
+				</tr>
+				<tr>
+					<td align="center" valign="top">
+						<!-- BEGIN BODY // -->
+						<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+							<!-- -->
+							
+							<tr>
+								<td align="center" valign="top">
+									<!-- BEGIN COLUMNS // -->
+									<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyTextBlock" style="background-color: white; box-shadow: inset 0px 3px 8px -4px rgb(242, 100, 34);">
+										<tbody class="themezyTextBlockOuter">
+											<tr>
+												<td valign="top" class="themezyTextBlockInner">
+													
+													<table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="themezyTextContentContainer">
+														<tbody>
+															<tr>
+																
+																<td valign="top" class="themezyTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
+																	<!--<img src="images/img03.png" alt="" height="24" style="display: block;margin: 0px auto;" width="50px">-->
+																	<table class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" border="0" cellpadding="0" cellspacing="0" width="100%">
+																		<tbody class="mcnDividerBlockOuter">
+																			<tr>
+																				<td class="mcnDividerBlockInner" style="min-width: 100%;padding: 0px 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																					<table class="mcnDividerContent" style="min-width: 100%; border-top: 1px solid rgb(253, 204, 180); box-shadow: 0 0 10px #000; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="100%">
+																						<tbody><tr>
+																							<td style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																								<span></span>
+																							</td>
+																						</tr>
+																					</tbody></table>
+																					<!--
+																					<td class="mcnDividerBlockInner" style="padding: 18px;">
+																											<hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+																						-->
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																		<p style="text-align: center;font-size: 1.1em;">"Conceputa  pentru a sustine produse mai mari, cu dubla functie de prindere a benzii ce permite, atat agatarea produsului in partea superioara, cat si clipsarea lui in partea inferioara. Poate fi extins prin adaugarea mai multor segmente."</p>
+																		<table class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" border="0" cellpadding="0" cellspacing="0" width="100%">
+																			<tbody class="mcnDividerBlockOuter">
+																				<tr>
+																					<td class="mcnDividerBlockInner" style="min-width: 100%;padding: 0px 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																						<table class="mcnDividerContent" style="min-width: 100%; border-top: 1px solid rgb(253, 204, 180); box-shadow: 0 0 10px #000; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="100%">
+																							<tbody><tr>
+																								<td style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																									<span></span>
+																								</td>
+																							</tr>
+																						</tbody></table>
+																						<!--
+																						<td class="mcnDividerBlockInner" style="padding: 18px;">
+																												<hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+																							-->
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</td>
+																	</tr>
+																</tbody></table>
+																
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<table border="0" cellpadding="0" cellspacing="0" width="600" class="device-width" style="text-align: left;background-color: #3d7ab0;">
+													<tbody><tr>
+														<td width="10"></td>
+														<td>
+															<table border="0" cellpadding="0" cellspacing="0" width="100%">
+																<tbody>
+																	
+																	<tr>
+																		<td height="53">
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<table border="0" cellpadding="0" cellspacing="0" align="left" width="270" class="device-width">
+																				<tbody><tr>
+																					<td class="editable" style="font-family: sans-serif;margin: 0;color: #ffffff;font-size: 16px;line-height: 24px;font-weight: normal;text-align: center;"><h2 style="
+																						color: white!important;
+																					">Banda de mercantizare ofera urmatoarele avantaje:</h2></td>
+																				</tr>
+																				<tr>
+																					<td height="23"></td>
+																				</tr>
+																				
+																				<tr>
+																					<td height="25"></td>
+																				</tr>
+																				<tr>
+																					<td>
+																						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+																							<tbody><tr>
+																								<td width="8"></td>
+																								<td><div class="editable"><img src="index5/check-mark-8-512.png" width="24" height="24"></div></td>
+																								<td width="8"></td>
+																								<td class="editable" style="font-family: sans-serif; color: #ffffff; font-size: 16px; line-height: 24px; font-weight:normal"> Personalizarea zonei de header (70x40 mm) cu elementele dorite; </td>
+																							</tr>
+																							<tr>
+																								<td height="16"></td>
+																							</tr>
+																							<tr>
+																								<td width="8"></td>
+																								<td><div class="editable"><img src="index5/check-mark-8-512.png" width="24" height="24"></div></td>
+																								<td width="8"></td>
+																								<td class="editable" style="font-family: sans-serif; color: #ffffff; font-size: 16px; line-height: 24px; font-weight:normal"> Posibilitatea de a-ti promova produsele si mai bine;</td>
+																							</tr>
+																							<tr>
+																								<td height="16"></td>
+																							</tr>
+																							<tr>
+																								<td width="8"></td>
+																								<td><div class="editable"><img src="index5/check-mark-8-512.png" width="24" height="24"></div></td>
+																								<td width="8"></td>
+																								<td class="editable" style="font-family: sans-serif; color: #ffffff; font-size: 16px; line-height: 24px; font-weight:normal"> Stabilitatea produselor datorita sistemului de blocare care impiedica alunecarea acestora. </td>
+																							</tr>
+																							
+																							
+																						</tbody></table></td>
+																					</tr>
+																					<tr>
+																						<td height="54"><span>&nbsp;</span></td>
+																					</tr>
+																					
+																					<tr>
+																						<td class="editable" style="font-family: sans-serif;margin: 0; color: #ffffff; font-size: 16px; line-height: 24px; font-weight: normal">Lungimea  standard a benzii este de 2 x 360 mm, cu distanța de 60 mm  între punctele de fixare.</td>
+																					</tr>
+																					<tr>
+																						<td height="40"><span>&nbsp;</span></td>
+																					</tr>
+																				</tbody></table>
+																				<table border="0" cellpadding="0" cellspacing="0" align="right" width="280" class="device-width">
+																					<tbody><tr>
+																						<td height="8"><span>&nbsp;</span></td>
+																					</tr>
+																					<tr>
+																						<td align="center">
+																							<table width="280" border="0" cellspacing="0" cellpadding="0">
+																								<tbody><tr>
+																									<td width="10"><span>&nbsp;</span></td>
+																									<td>
+																										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																											<tbody><tr>
+																												<td align="left"><img src="index5/corner-01.png" width="231" height="31" style="display: block"></td>
+																											</tr>
+																											<tr>
+																												<td>
+																													<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																														<tbody><tr>
+																															<td width="35" valign="top"><img src="index5/corner-02.png" width="35" height="197" style="display: block"></td>
+																															<td>
+																																<table cellpadding="0" cellspacing="0" border="0" width="100%">
+																																	<tbody><tr>
+																																		<td height="259" align="center" style="background: #23b0c0 url(index5/amplify.gif) center top no-repeat;background-size:cover;-webkit-background-size:cover;border-radius: 18px; box-shadow: 0 0 10px #000;" valign="middle">
+																																			<table width="259" border="0" cellspacing="0" cellpadding="0" height="230" style="font-family: 'Raleway', Open Sans, sans-serif;border-radius: 18px;-webkit-border-radius: 18px; overflow: hidden; color: #ffffff;text-align:center; font-size: 28px; line-height: 32px;font-weight:600">
+																																				<tbody><tr>
+																																					<td class="editable" style="font-family: 'Raleway', Open Sans, sans-serif;font-weight:600"> <!--Quality
+																																						<br>
+																																					Product --></td>
+																																				</tr>
+																																			</tbody></table></td>
+																																		</tr>
+																																	</tbody></table></td>
+																																</tr>
+																															</tbody></table></td>
+																														</tr>
+																													</tbody></table></td>
+																													<td width="10px"><span>&nbsp;</span></td>
+																												</tr>
+																											</tbody></table></td>
+																										</tr>
+																										<tr>
+																											<td height="25px"><span>&nbsp;</span></td>
+																										</tr>
+																										<tr>
+																											<td>
+																												<table width="100%" border="0" cellspacing="0" cellpadding="0">
+																													<tbody><tr>
+																														<td>
+																															<div style="border-top: 1px dashed #ffffff; display: block"><span>&nbsp;</span>
+																														</div></td>
+																														<td width="42px">
+																															<div class="editable">
+																																<img src="index5/cube-35776_960_720.png" width="42" height="42">
+																															</div>
+																														</td>
+																														<td>
+																															<div style="border-top: 1px solid #ffffff; display: block"><span>&nbsp;</span>
+																														</div></td>
+																													</tr>
+																												</tbody></table></td>
+																											</tr>
+																											<tr>
+																												<td height="21"></td>
+																											</tr>
+																											<tr>
+																												<td class="editable" style="font-family: sans-serif;margin: 0; color: #ffffff; font-size: 15px; line-height: 24px; font-weight: normal"><p style="
+																													text-align: center;
+																												"><strong>Culoare:</strong> Alb</p></td>
+																											</tr>
+																											<tr>
+																												<td height="25"></td>
+																											</tr>
+																										</tbody></table></td>
+																									</tr>
+																								</tbody></table></td>
+																								<td width="10"><span>&nbsp;</span></td>
+																							</tr>
+																						</tbody></table>
+
+													<table border="0" cellpadding="0" cellspacing="0" width="600" style="text-align: left;background-color: #ffffff;/* box-shadow: 0px 0px 5px #f26422; */box-shadow: inset 0px 3px 8px -4px rgb(242, 100, 34);">
+																							<tbody><tr>
+																								<td width="10" style="
+    /* background-color: #f26422; */
+"></td>
+																								<td>
+																									<table border="0" cellpadding="0" cellspacing="0" width="100%">
+																										<tbody>
+																											
+																											<tr style="display:none;">
+																												<td height="53">
+																													<table class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" border="0" cellpadding="0" cellspacing="0" width="100%">
+																														<tbody class="mcnDividerBlockOuter">
+																															<tr>
+																																<td class="mcnDividerBlockInner" style="min-width: 100%;padding: 0px 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																	<table class="mcnDividerContent" style="min-width: 100%;border-top: 1px solid rgb(253, 204, 180);box-shadow: 0 0 10px #000;border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="100%">
+																																		<tbody><tr>
+																																			<td style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																				<span></span>
+																																			</td>
+																																		</tr>
+																																	</tbody></table>
+																																	<!--
+																																	<td class="mcnDividerBlockInner" style="padding: 18px;">
+																																							<hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+																																		-->
+																																	</td>
+																																</tr>
+																															</tbody>
+																														</table>												</td>
+																													</tr>
+																													<tr>
+																														<td>
+																															<table border="0" cellpadding="0" cellspacing="0" align="left" width="249" style="background-color: #faf7f0;" class="device-width">
+																																<tbody>
+																																	
+																																	
+																																	<tr>
+																																		<td height="25"></td>
+																																	</tr>
+																																	
+																																	
+																																	<tr>
+																																		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyCaptionBlock">
+																																			<tbody class="themezyCaptionBlockOuter">
+																																				<tr>
+																																					<td class="themezyCaptionBlockInner" valign="top" style="padding: 0px;">
+																																						
+																																						<table align="left" border="0" cellpadding="0" cellspacing="0" class="themezyCaptionBottomContent" width="false">
+																																							<tbody><tr>
+																																								<td align="left" valign="top" class="columnsContainer" width="20%">
+																																									<table align="left" border="0" cellpadding="0" cellspacing="0" class="templateColumn">
+																																										<tbody><tr>
+																																											<td valign="top" class="centerColumnContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyCaptionBlock">
+																																												<tbody class="themezyCaptionBlockOuter">
+																																													<tr>
+																																														<td class="themezyCaptionBlockInner" valign="top" style="padding:9px;">
+																																															
+																																															<table align="left" border="0" cellpadding="0" cellspacing="0" class="themezyCaptionBottomContent" width="false">
+																																																<tbody><tr>
+																																																	<td class="themezyCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
+																																																		
+																																																		
+																																																		<img alt="" src="index5/U2621B Merchandising Strip with 12 stations incl header Black JPG.jpg" style="max-width:134px;max-height: 170px;" class="themezyImage">
+																																																		
+																																																		
+																																																	</td>
+																																																</tr>
+																																																
+																																															</tbody></table>
+																																														</td>
+																																													</tr>
+																																												</tbody>
+																																											</table></td>
+																																										</tr>
+																																									</tbody></table>
+																																								</td>
+																																								<td align="left" valign="top" class="columnsContainer" width="20%">
+																																									<table align="left" border="0" cellpadding="0" cellspacing="0" class="templateColumn">
+																																										<tbody><tr>
+																																											<td valign="top" class="centerColumnContainer"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyCaptionBlock">
+																																												<tbody class="themezyCaptionBlockOuter">
+																																													<tr>
+																																														<td class="themezyCaptionBlockInner" valign="top" style="padding:9px;">
+																																															
+																																															<table align="left" border="0" cellpadding="0" cellspacing="0" class="themezyCaptionBottomContent" width="false">
+																																																<tbody><tr>
+																																																	<td class="themezyCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
+																																																		
+																																																		
+																																																		<img alt="" src="index5/U2621 Merchandising Strip with 12 stations incl header White JPG.jpg" style="max-width:134px;max-height: 170px;" class="themezyImage">
+																																																		
+																																																		
+																																																	</td>
+																																																</tr>
+																																																
+																																															</tbody></table>
+																																														</td>
+																																													</tr>
+																																												</tbody>
+																																											</table></td>
+																																										</tr>
+																																									</tbody></table>
+																																								</td>
+																																							</tr>
+																																							<tr>
+																																								<td class="themezyTextContent" valign="top" style="padding:0 9px 0 9px;" width="164">
+																																									
+																																								</td>
+																																							</tr>
+																																						</tbody></table>
+																																					</td>
+																																				</tr>
+																																			</tbody>
+																																		</table></td>
+																																	</tr>
+																																	<tr>
+																																		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyCaptionBlock">
+																																			<tbody class="themezyCaptionBlockOuter">
+																																				<tr>
+																																					<td class="themezyCaptionBlockInner" valign="top" style="padding:9px;">
+																																						
+																																						<table align="center" border="0" cellpadding="0" cellspacing="0" class="themezyCaptionBottomContent">
+																																							<tbody><tr>
+																																								<td class="themezyCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
+																																									
+																																									
+																																									<img alt="" src="index5/MPP206-1182 newsletter.64.jpg" width="100%" style="max-width: 230px;max-height: 170px;" class="themezyImage">
+																																									
+																																									
+																																								</td>
+																																							</tr>
+																																							
+																																						</tbody></table>
+																																					</td>
+																																				</tr>
+																																			</tbody>
+																																		</table></td>
+																																	</tr><tr>
+																																	<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyCaptionBlock">
+																																		<tbody class="themezyCaptionBlockOuter">
+																																			<tr>
+																																				<td class="themezyCaptionBlockInner" valign="top" style="padding:9px;">
+																																					
+																																					<table align="left" border="0" cellpadding="0" cellspacing="0" class="themezyCaptionBottomContent" width="false">
+																																						<tbody><tr>
+																																							<td class="themezyCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
+																																								
+																																								
+																																								<img alt="" src="index5/U2621 Merchandising Strip with 12 stations incl header White JPG_2.jpg" width="100%" style="max-width: 230px;max-height: 170px;" class="themezyImage">
+																																								
+																																								
+																																							</td>
+																																						</tr>
+																																						<tr>
+																																							<td class="themezyTextContent" valign="top" style="padding:0 9px 0 9px;" width="164">
+																																								
+																																							</td>
+																																						</tr>
+																																					</tbody></table>
+																																				</td>
+																																			</tr>
+																																		</tbody>
+																																	</table></td>
+																																</tr>
+																																
+																																
+																																
+																															</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" align="left" style="
+    height: 510px;
+    width: 5px;
+"><tbody><tr><td><div style="border-left: 1px dashed #f26422;display: block;height: 100%;"><span>&nbsp;</span>
+														</div></td></tr></tbody></table>
+																															<table border="0" cellpadding="0" cellspacing="0" align="right" width="280" class="device-width">
+																																<tbody>
+																																<tr>
+																																	<td align="center">
+																																		</td>
+																																					</tr>
+																																					<tr>
+<td>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyCaptionBlock">
+																																		<tbody class="themezyCaptionBlockOuter">
+																																			<tr>
+																																				<td class="themezyCaptionBlockInner" valign="top" style="/*padding:9px;*/">
+																																					
+																																					<table align="center" border="0" cellpadding="0" cellspacing="0" class="themezyCaptionBottomContent" width="false" style="/* margin: 0px auto; *//* display: block; */">
+																																						<tbody><tr>
+																																							<td class="themezyCaptionBottomImageContent" align="center" valign="top" style="padding:0 9px 9px 9px;">
+																																								
+																																								
+																																								<img alt="" src="index5/special-offer-red-ribbon_1034-55.jpg" width="100%" style="max-width: 175px;max-height: 175px;" class="themezyImage">
+																																								
+																																								
+																																							</td>
+																																						</tr>
+																																						
+																																					</tbody></table>
+																																				</td>
+																																			</tr>
+																																		</tbody>
+																																	</table>
+  </td>
+</tr>
+																																					
+																																						
+																																						<tr>
+																																							<td class="editable" style="font-family: sans-serif;margin: 0;color: #382222;font-size: 15px;font-weight: normal;"><p>Va oferim acest produs la un pret SPECIAL:<br><strong>84 EURO/ 100 BUCATI – 30% reducere</strong> fata de pretul de lista.</p>
+<p>Cantitate minima de comanda 200 bucati.</p>
+
+<p>* Pret unitar, fara TVA, livrare EXW Timisoara.</p><p>* * Promotie valabila pana in 30.01.2017.</p></td>
+																																						</tr>
+																																						
+																																					</tbody></table></td>
+																																				</tr>
+																																				<tr>
+																																					<td height="53">
+																																						<table class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" border="0" cellpadding="0" cellspacing="0" width="100%">
+																																							<tbody class="mcnDividerBlockOuter">
+																																								<tr>
+																																									<td class="mcnDividerBlockInner" style="min-width: 100%;padding: 0px 18px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																										<table class="mcnDividerContent" style="min-width: 100%; border-top: 1px solid rgb(253, 204, 180); box-shadow: 0 0 10px #000; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" width="100%">
+																																											<tbody><tr>
+																																												<td style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+																																													<span></span>
+																																												</td>
+																																											</tr>
+																																										</tbody></table>
+																																										<!--
+																																										<td class="mcnDividerBlockInner" style="padding: 18px;">
+																																																<hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+																																											-->
+																																										</td>
+																																									</tr>
+																																								</tbody>
+																																							</table>												</td>
+																																						</tr>
+																																						<tr>
+																					<td>
+																						<table cellpadding="0" cellspacing="0" border="0" width="100%">
+																							<tbody><tr>
+																								<td width="8"></td>
+																								<td><div class="editable"><img height="24" width="24" src="index5/location-icon.png"></div></td>
+																								<td width="8"></td>
+																								<td class="editable" style="font-family: sans-serif;/* color: #ffffff; */font-size: 16px;line-height: 24px;font-weight:normal;"> Calea Sagului (DN59), KM 8+550 m, 
+Platforma Incontro, Hala 4-7, 
+307221 Chisoda, Timis, Romania </td>
+																							</tr>
+																							<tr>
+																								<td height="16"></td>
+																							</tr>
+																							<tr>
+																								<td width="8"></td>
+																								<td><div class="editable"><img height="24" width="24" src="index5/phone-28-xxl.png"></div></td>
+																								<td width="8"></td>
+																								<td class="editable" style="font-family: sans-serif;/* color: #ffffff; */font-size: 16px;line-height: 24px;font-weight:normal;">+4 0256 305000</td>
+																							</tr>
+																							<tr>
+																								<td height="16"></td>
+																							</tr>
+																							<tr>
+																								<td width="8"></td>
+																								<td><div class="editable"><img src="index5/fax.png" width="24" height="24"></div></td>
+																								<td width="8"></td>
+																								<td class="editable" style="font-family: sans-serif;/* color: #ffffff; */font-size: 16px;line-height: 24px;font-weight:normal;">+4 0256 305015</td>
+																							</tr>
+<tr>
+																								<td height="16"></td>
+																							</tr>
+<tr>
+																								<td width="8"></td>
+																								<td><div class="editable"><img src="index5/message-xxl.png" width="24" height="24"></div></td>
+																								<td width="8"></td>
+																								<td class="editable" style="font-family: sans-serif;/* color: #ffffff; */font-size: 16px;line-height: 24px;font-weight:normal;"> info[at]artmatch.ro </td>
+																							</tr>
+																							
+																							
+																						</tbody></table></td>
+																					</tr>
+																																						<tr>
+																																							<td>
+																																								<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyTextBlock">
+																																					<tbody class="themezyTextBlockOuter">
+																																						<tr>
+																																							<td valign="top" class="themezyTextBlockInner">
+																																								
+																																								
+																																							<table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyButtonBlock">
+																																							<tbody class="themezyButtonBlockOuter">
+																																								<tr>
+																																									<td style="padding-top:0; padding-right:18px; padding-bottom:18px; padding-left:18px;" valign="top" align="center" class="themezyButtonBlockInner">
+																																										<table border="0" cellpadding="0" cellspacing="0" class="themezyButtonContentContainer" style="border-collapse: separate !important;border-radius: 5px;background-color: #f26422">
+																																											<tbody>
+																																												<tr>
+																																													<td align="center" valign="middle" class="themezyButtonContent" style="font-family: Arial; font-size: 16px; padding: 16px;">
+																																														<a class="themezyButton " title="Get more info" href="#" target="_blank" style="font-weight: normal;letter-spacing: normal;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;">Get more info</a>
+																																													</td>
+																																												</tr>
+																																											</tbody>
+																																										</table>
+																																									</td>
+																																								</tr>
+																																							</tbody>
+																																						</table>
+																																				</td>
+																																			</tr>
+																																		</tbody></table>
+																																							</td>
+																																						</tr>
+																																																					</tbody></table></td>
+																																						<td width="10" style="
+    /* background-color: #f26422; */
+"><span>&nbsp;</span></td>
+																																					</tr>
+																																				</tbody></table>
+																																				
+																																				<!-- // END COLUMNS -->
+																																			</td>
+																																		</tr>
+																																	
+																																
+																															</table>
+																															<!-- // END TEMPLATE -->
+
+																															<table border="0" cellpadding="0" cellspacing="0" id="envelopeContainer">
+																																<!-- BEGIN Envelope -->
+																																<tr>
+																																	<td align="center" valign="top"  id="envelope-image" style="background-color: white;">
+																																		<img src="index5/envelope-open-front (1).png" width="100%" style="max-width: 600px; max-height:300px;     box-shadow: 0px 5px 10px -3px #000; padding-bottom: 0; display: inline !important; vertical-align: bottom;" class="themezyImage" />
+																																	</td>
+																																</tr>
+																																<!-- // END Envelope -->
+																																<tr>
+																																	<td align="center" valign="top">
+																																		<!-- BEGIN FOOTER // -->
+																																		<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateFooter">
+																																			<tr>
+																																				<td valign="top" class="footerContainer" style="padding-bottom:9px;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyDividerBlock">
+																																					<tbody class="themezyDividerBlockOuter">
+																																						<tr>
+																																							<td class="themezyDividerBlockInner" style="padding: 25px 18px;">
+																																								<table class="themezyDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%">
+																																									<tbody><tr>
+																																										<td>
+																																											<span></span>
+																																										</td>
+																																									</tr>
+																																								</tbody></table>
+																																							</td>
+																																						</tr>
+																																					</tbody>
+																																				</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="themezyTextBlock">
+																																				<tbody class="themezyTextBlockOuter">
+																																					<tr>
+																																						<td valign="top" class="themezyTextBlockInner">
+																																							
+																																							<table align="left" border="0" cellpadding="0" cellspacing="0" width="600" class="themezyTextContentContainer">
+																																								<tbody><tr>
+																																									
+																																									<td valign="top" class="themezyTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
+																																										
+																																										<span style="font-size:14px">You are receiving this email because you signed up at our website.&nbsp;<br>
+																																											If you want to unsubscribe, <a href="#">click here</a>.</span>
+																																										</td>
+																																									</tr>
+																																								</tbody></table>
+																																								
+																																							</td>
+																																						</tr>
+																																					</tbody>
+																																				</table></td>
+																																			</tr>
+																																		</table>
+																																		<!-- // END FOOTER -->
+																																	</td>
+																																</tr>
+																															</table>
+																														</td>
+																													</tr>
+																												</table>
+																												</center>
+																											</body>
+																										</html>
